@@ -14,11 +14,11 @@ export default class AnimationColorController {
     this.n3 = this.v2;
   }
 
-  startAnimation() {
-    setTimeout(this.changeColorSmoothly, this.ts);
+  startAnimationColor() {
+    setTimeout(this.changeColorEffect, this.ts);
   }
 
-  changeColorSmoothly = () => {
+  changeColorEffect = () => {
     if (!this._element) return;
     switch (this.counter) {
       case 0:
@@ -60,6 +60,6 @@ export default class AnimationColorController {
     }
     this.color = 0x000000 | ((this.n1 << 16) | (this.n2 << 8) | this.n3);
     this._element.style.color = `#${this.color.toString(16).padStart(6, "0")}`;
-    setTimeout(this.changeColorSmoothly, this.ts);
+    setTimeout(this.changeColorEffect, this.ts);
   };
 }

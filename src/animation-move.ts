@@ -13,7 +13,10 @@ export default class AnimationMoveController {
       this._element.style.left = "0px";
     }
   }
-  moveNotes() {
+  startAnimationMove() {
+    this.changePositionEffect();
+  }
+  changePositionEffect() {
     if (!this._element) return;
     let currentX = parseInt(this._element.style.left);
     let currentY = parseInt(this._element.style.top);
@@ -31,6 +34,6 @@ export default class AnimationMoveController {
     this._element.style.left = newX + "px";
     this._element.style.top = newY + "px";
 
-    requestAnimationFrame(() => this.moveNotes());
+    requestAnimationFrame(() => this.changePositionEffect());
   }
 }
